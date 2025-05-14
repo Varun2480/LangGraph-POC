@@ -1,0 +1,20 @@
+User: hello
+Assistant: Hello! How can I help you today?
+
+User: I want to eat pizza
+Assistant: 
+--- Tool: restaurant_search_tool called with dish: pizza ---
+Assistant: The dish 'pizza' is available at: Dominos, Luigi's Pizzeria, Pizza Hut.
+Assistant: OK. pizza is available at Dominos, Luigi's Pizzeria, and Pizza Hut. Which restaurant would you like to order from?
+
+User: I want to order pizza from Dominos
+Assistant: 
+--- Tool: get_order_details_from_api called with restaurant_name: Dominos and dish_name: pizza---
+Assistant: {"order_id": "e2e0c6ad-c36a-49a0-b17c-274747efea40", "restaurant_name": "Dominos", "items": ["pizza"], "total_amount": 5.08, "currency": "USD", "ordered_at": "2025-05-14T18:41:43.565516", "estimated_arrival_time": "2025-05-14T19:21:43.565516", "payment_mode": "Debit Card", "status": "Order Placed", "delivery_address": "123 Main St, Anytown, USA", "customer_notes": "Call upon arrival."}
+Assistant: OK. I have placed an order for pizza from Dominos. The order details are:  Order ID: e2e0c6ad-c36a-49a0-b17c-274747efea40, items: ['pizza'], ordered at: 2025-05-14T18:41:43.565516, customer notes: Call upon arrival., delivery address: 123 Main St, Anytown, USA, estimated arrival time: 2025-05-14T19:21:43.565516, payment mode: Debit Card, total amount: 5.08 USD.
+
+User: thank you
+Assistant: How can I help you today?
+
+User: q
+Goodbye!
